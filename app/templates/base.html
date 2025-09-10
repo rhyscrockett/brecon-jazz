@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css"> <!-- Static CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/> <!-- Leaflet JS CSS -->
+        <title>{% block title %}Brecon Jazz{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <h1>🎷 Brecon Jazz Festival</h1>
+            <nav>
+                <a href="/">Home</a> |
+                <a href="/schedule">Schedule</a> |
+                <a href="/bands">Bands</a> |
+                <a href="/venues">Venues</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Brecon Jazz - Rhys Crockett - LinkedIn</p>
+        </footer>
+
+        <!-- HTMX -->
+        <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+        <!-- Alpine.js -->
+        <script src="https://unpkg.com/alpinejs@3.12.0" defer></script>
+        <!-- Leaflet JS -->
+         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </body>
+</html>

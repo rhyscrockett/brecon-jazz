@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+nav a {
+    color: #ecf0f1;
+    margin: 0 0.5em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #fff;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background: #34495e;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #ecf0f1;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2c3e50;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.highlight {
+    background-color: #fff3bf;
+}
+
+/* --- Venues Table Layout --- */
+.venues-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.venues-table th,
+.venues-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.highlight-row {
+  background-color: #f0f8ff;
+}
+
+.highlight-color {
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+}

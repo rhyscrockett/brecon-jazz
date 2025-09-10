@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Schedule - Brecon Jazz{% endblock %}
+
+{% block content %}
+<h2>Festival Schedule</h2>
+
+<!-- Venue filter -->
+<label for="venue-filter">Filter by Venue:</label>
+<select id="venue-filter" x-data @change="$dispatch('venue-changed', $event.target.value)">
+    <option value="all">All</option>
+    <option value="Main Stage">Main Stage</option>
+    <option value="Side Stage">Side Stage</option>
+</select>
+
+<!-- Schedule Table -->
+<table id="schedule-table" border="1">
+    <tr>
+        <th>Time</th>
+        <th>Venue</th>
+        <th>Act</th>
+    </tr>
+    {% for item in schedule %}
+    <tr
+        x-data 
+        :class="{'highlight': '{{ item.venue }}' == $event.detail}"
+        @venue-changed.window="$el.style.display = ($event.detail == 'all' || '{{ item.venue }}' == $event.detail) ? '' : 'none'">
+        <td>{{ item.time }}</td>
+        <td>{{ item.venue }}</td>
+        <td>{{ item.act }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>(Static placeholder data - interactivity coming later!)</p>
+{% endblock %}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Main Stage",
+    "address": "The Struet, Brecon",
+    "desc": "Outdoor stage for headliners and bigger crowds.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=The+Struet+Brecon",
+    "lat": 51.95092145515239,
+    "lon": -3.3901887465166314,
+    "color": "#e74c3c",
+    "price": "Free"
+  },
+  {
+    "id": 2,
+    "name": "Side Stage",
+    "address": "Brecon Arts Centre, Canal Rd",
+    "desc": "Intimate space for acoustic and experimental sets.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=Found+Gallery+in+Brecon",
+    "lat": 51.94659026275499,
+    "lon": -3.3891486311726253,
+    "color": "#3e1faf",
+    "price": "£5 entry"
+  },
+  {
+    "id": 3,
+    "name": "Jazz Club",
+    "address": "High Street, Brecon",
+    "desc": "Late-night jam sessions with local legends.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=High+Street+Brecon",
+    "lat": 51.947993763542584,
+    "lon": -3.391539313326969,
+    "color": "#663d38",
+    "price": "£5 entry"
+  }
+]

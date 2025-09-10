@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Venues - Brecon Jazz{% endblock %}
+
+{% block content %}
+<h2>Venues</h2>
+<p>Find your way around the festival. Tap a venue for map directions.</p>
+
+<table id="venues-table" class="venues-table">
+  <thead>
+    <tr>
+      <th>Marker</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Will be populated by JS -->
+  </tbody>
+</table>
+
+<div
+  id="venues-map"
+  style="width: 100%; height: 400px; margin-top: 1rem;"
+  x-data="venuesMap"
+  x-init="init()"
+  @venue-hover.window="highlightMarker($event.detail.id)"
+  @venue-leave.window="resetMarker($event.detail.id)"
+></div>
+
+<script src="{{ url_for('static', path='js/venues-map.js') }}"></script>
+
+{% endblock %}
