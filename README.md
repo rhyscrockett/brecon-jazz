@@ -21,7 +21,7 @@ Built with:
 
 ### Database Initialization
 
-This application uses a PostgreSQL database (or SQLite for local development). 
+This application uses a SQLite database. 
 
 Before running the app for the first time on a new environment (such as a developer machine or a fresh server), **you must initialize the database schema and seed initial data** by running the included `init_db.py` script:
 
