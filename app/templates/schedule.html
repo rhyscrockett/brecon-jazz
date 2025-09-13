@@ -3,33 +3,86 @@
 {% block title %}Schedule - Brecon Jazz{% endblock %}
 
 {% block content %}
-<h2>Festival Schedule</h2>
+<div id="schedule-content">
+  {% include "schedule_partial.html" %}
+</div>
 
-<!-- Venue filter -->
-<label for="venue-filter">Filter by Venue:</label>
-<select id="venue-filter" x-data @change="$dispatch('venue-changed', $event.target.value)">
-    <option value="all">All</option>
-    <option value="Main Stage">Main Stage</option>
-    <option value="Side Stage">Side Stage</option>
-</select>
+<style>
+  .schedule-grid-container {
+    display: grid;
+    grid-template-columns: 70px repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 12px;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #ccc;
+    padding: 8px;
+    box-sizing: border-box;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  .time-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .time-label {
+    min-height: 34px;
+    padding: 8px 4px;
+    font-size: 0.9em;
+    color: #888;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    user-select: none;
+  }
+  .venue-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .venue-header {
+    font-weight: bold;
+    padding: 8px 4px;
+    border-bottom: 2px solid #333;
+    text-align: center;
+    background-color: #f5f5f5;
+    user-select: none;
+  }
+  .gig-cell {
+    min-height: 34px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+  .gig-bar {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    border-radius: 5px;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+  }
 
-<!-- Schedule Table -->
-<table id="schedule-table" border="1">
-    <tr>
-        <th>Time</th>
-        <th>Venue</th>
-        <th>Act</th>
-    </tr>
-    {% for item in schedule %}
-    <tr
-        x-data 
-        :class="{'highlight': '{{ item.venue }}' == $event.detail}"
-        @venue-changed.window="$el.style.display = ($event.detail == 'all' || '{{ item.venue }}' == $event.detail) ? '' : 'none'">
-        <td>{{ item.time }}</td>
-        <td>{{ item.venue }}</td>
-        <td>{{ item.act }}</td>
-    </tr>
-    {% endfor %}
-</table>
-<p>(Static placeholder data - interactivity coming later!)</p>
+  @media (max-width: 700px) {
+    .schedule-grid-container {
+      display: block;
+      max-height: unset;
+    }
+    .time-column, .venue-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .venue-header {
+      border-bottom: none;
+      background-color: transparent;
+      font-size: 1.1em;
+      padding-left: 0;
+      text-align: left;
+    }
+  }
+</style>
 {% endblock %}

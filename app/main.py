@@ -2,10 +2,11 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from app.templates import templates
-from app.routes import schedule, bands, venues
+from app.routes import bands, venues
+from app.routes.schedule import router as schedule_router
 
 app = FastAPI()
-app.include_router(schedule.router)
+app.include_router(schedule_router)
 app.include_router(bands.router)
 app.include_router(venues.router)
 

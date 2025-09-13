@@ -1,0 +1,39 @@
+<h2>Schedule for {{ day }}</h2>
+
+<div style="margin-bottom: 1em;">
+  <button
+    hx-get="/schedule/{{ (day | todatetime | datetimeadd(days=-1)) | datetimeformat('%Y-%m-%d') }}"
+    hx-target="#schedule-content"
+    hx-swap="innerHTML"
+  >Previous Day</button>
+  <button
+    hx-get="/schedule/{{ (day | todatetime | datetimeadd(days=1)) | datetimeformat('%Y-%m-%d') }}"
+    hx-target="#schedule-content"
+    hx-swap="innerHTML"
+  >Next Day</button>
+</div>
+
+<div class="schedule-grid-container">
+  <div class="time-column">
+    {% for time_label, _ in time_slots %}
+    <div class="time-label">{{ time_label }}</div>
+    {% endfor %}
+  </div>
+
+  {% for venue in venues %}
+  <div class="venue-column">
+    <div class="venue-header">{{ venue.name }}</div>
+    {% for time_label, gigs_in_slot in time_slots %}
+    <div class="gig-cell">
+      {% for gig in gigs_in_slot if gig.venue.name == venue.name %}
+      <div class="gig-bar"
+           style="background-color: {{ gig.venue.color }}; height: {{ gig.duration_slots * 34 }}px;"
+           title="{{ gig.act_name }} — {{ gig.venue.name }}: {{ gig.description }}">
+        {{ gig.act_name }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
