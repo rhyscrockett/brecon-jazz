@@ -1,35 +1,46 @@
 [
   {
     "id": 1,
-    "name": "Main Stage",
-    "address": "The Struet, Brecon",
-    "desc": "Outdoor stage for headliners and bigger crowds.",
-    "map_url": "https://www.google.com/maps/search/?api=1&query=The+Struet+Brecon",
-    "lat": 51.95092145515239,
-    "lon": -3.3901887465166314,
+    "name": "St Mary Street",
+    "address": "St Mary Street, Brecon",
+    "desc": "Outdoor main stage for families and bigger crowds.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=Duke+of+Wellington+Monument",
+    "lat": 51.946900337017865,
+    "lon": -3.3900804105180264,
     "color": "#e74c3c",
     "price": "Free"
   },
   {
     "id": 2,
-    "name": "Side Stage",
-    "address": "Brecon Arts Centre, Canal Rd",
-    "desc": "Intimate space for acoustic and experimental sets.",
-    "map_url": "https://www.google.com/maps/search/?api=1&query=Found+Gallery+in+Brecon",
-    "lat": 51.94659026275499,
-    "lon": -3.3891486311726253,
+    "name": "The Clarence Inn",
+    "address": "25 Watton, Brecon",
+    "desc": "Large local pub with the biggest headliners performing in a spacious beer-garden.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=The+Clarence+Inn",
+    "lat": 51.945654654932376,
+    "lon": -3.3872335430922145,
     "color": "#3e1faf",
-    "price": "£5 entry"
+    "price": "Free"
   },
   {
     "id": 3,
-    "name": "Jazz Club",
-    "address": "High Street, Brecon",
-    "desc": "Late-night jam sessions with local legends.",
-    "map_url": "https://www.google.com/maps/search/?api=1&query=High+Street+Brecon",
-    "lat": 51.947993763542584,
-    "lon": -3.391539313326969,
+    "name": "The Muse Brecon",
+    "address": "Glamorgan Street, Brecon",
+    "desc": "Late-night private sessions.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=The+Muse+Brecon",
+    "lat": 51.946595062233705,
+    "lon": -3.390695530443249,
     "color": "#663d38",
     "price": "£5 entry"
+  },
+  {
+    "id": 4,
+    "name": "Markets Tavern",
+    "address": "36 Free Street, Brecon",
+    "desc": "Small local pub with big beer-garden, wide selection of booze, and food truck.",
+    "map_url": "https://www.google.com/maps/search/?api=1&query=Markets+Tavern",
+    "lat": 51.94686033420432,
+    "lon": -3.3871305661116047,
+    "color": "#129acc",
+    "price": "Free"
   }
 ]
